@@ -1,8 +1,10 @@
 import React from "react";
 
 const DataTable = ({ coursesData, filtered }) => {
-  let content = "";
 
+
+  let content = "";
+  // if any category selected will render first 
   if (filtered.length >=1 ) {
     content = (
       <>
@@ -54,9 +56,12 @@ const DataTable = ({ coursesData, filtered }) => {
         </div>
       </>
     );
-  } else if (coursesData.length === 0) {
+  } 
+  // if there is no data then it will show no data found 
+  else if (coursesData.length === 0) {
     content = <p className="text-center">No Data Found!</p>;
   }
+  // and finally our inputed data will show if no category is selected and there are morethen 0 data on array 
    else {
     content = (
       <>

@@ -1,7 +1,8 @@
 import React from "react";
 
 const CourseDetails = ({ coursesData, setCoursesData }) => {
-  
+
+  // handle add course details 
   const handleAddDetails = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -9,7 +10,7 @@ const CourseDetails = ({ coursesData, setCoursesData }) => {
     const instructor = event.target.instructor.value;
     const category = event.target.category.value;
     const price = event.target.price.value;
-
+    // make an object 
     const courseData = {
       name,
       instructor,
@@ -17,6 +18,7 @@ const CourseDetails = ({ coursesData, setCoursesData }) => {
       price,
     };
 
+    // add a course to array 
     let allCourse = [];
     if (allCourse) {
       allCourse = [...coursesData, courseData];

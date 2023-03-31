@@ -6,9 +6,10 @@ import Nav from "../../Nav/Nav";
 
 const Home = () => {
 
+  // states 
   const [coursesData, setCoursesData] = useState([]);
   const [ filtered, setFiltered ] = useState([]);
-console.log(filtered);
+
   return (
     <div className="flex justify-between">
       <div>

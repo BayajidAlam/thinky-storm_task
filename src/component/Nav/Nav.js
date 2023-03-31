@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Nav.css";
 
 const Nav = ({ coursesData,setFiltered }) => {
+  // state for category 
   const [category, setCategory] = useState([]);
 
+  // handle category click 
   const handleSelect = (name) => {
-
     let allCategory = [];
     if (allCategory) {
       allCategory = [...category, name];
@@ -14,7 +15,7 @@ const Nav = ({ coursesData,setFiltered }) => {
       allCategory = [name];
       setCategory(allCategory);
     }
-
+    // filtering
     const foundData = coursesData.filter((data)=>{
       if(!category.length){
         return coursesData
