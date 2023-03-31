@@ -1,6 +1,7 @@
 import React from "react";
 
 const CourseDetails = ({ coursesData, setCoursesData }) => {
+  
   const handleAddDetails = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -27,6 +28,7 @@ const CourseDetails = ({ coursesData, setCoursesData }) => {
       form.reset();
     }
   };
+
   return (
     <section className="container mx-auto">
       <form onSubmit={handleAddDetails}>

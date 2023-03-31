@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Nav.css";
 
-const Nav = ({ coursesData, setCoursesData }) => {
+const Nav = ({ coursesData,setFiltered }) => {
   const [category, setCategory] = useState([]);
+
   const handleSelect = (name) => {
+
     let allCategory = [];
     if (allCategory) {
       allCategory = [...category, name];
@@ -13,12 +15,13 @@ const Nav = ({ coursesData, setCoursesData }) => {
       setCategory(allCategory);
     }
 
-    const selectedCategories = category;
-
-    const filteredProducts = coursesData.filter((product) => {
-      return selectedCategories.every((cat) => product.category.includes(cat));
-    });
-    setCoursesData(filteredProducts);
+    const foundData = coursesData.filter((data)=>{
+      if(!category.length){
+        return coursesData
+      }
+      return category.includes(data.category)
+    })
+    setFiltered(foundData)
   };
 
   return (
